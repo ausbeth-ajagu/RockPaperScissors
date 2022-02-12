@@ -5,136 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <script src="RPSjs.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <script>
-        //function for computer to pick randomly rock paper or scissors// 
-        let computerSelection = "";
-        let playerSelection = "";
-        let whoWon = "";
-        let gameWinner = "";
-        let scoreComputer = 0;
-        let scorePlayer = 0;
-        let round = 1;
-
-        function computerPlay() {
-            //randomly generate number between 1 and 3
-            let computerChoice = Math.floor(Math.random() * 3);
-            if (computerChoice == 1) {
-                computerSelection = "ROCK"
-            } else if (computerChoice == 2) {
-                computerSelection = "PAPER"
-            } else {
-                (computerSelection = "SCISSORS")
-            }
-            return computerSelection;
-        }
-
-        computerPlay()
-        //if 1, rock, 2, paper, 3 scissors etc
-        //based on number, console.log
-
-        //plays a round 
-        function playerChoice() {
-            playerSelection = prompt();
-            playerSelection = playerSelection.toUpperCase();
-            return playerSelection;
-        }
-        playerChoice()
-
-        function playRound(playerSelection, computerSelection) {
-
-            if (playerSelection == "ROCK") {
-
-                if (computerSelection == "PAPER") {
-                    whoWon = "You Lose! Paper Beats Rock!"
-                } else if (computerSelection == "ROCK") {
-                    whoWon = "It's a tie! You both chose Rock!"
-                } else {
-                    whoWon = "You Win! Rock Beats Scissors!"
-                }
-
-            }
-            if (playerSelection == "PAPER") {
-
-                if (computerSelection == "SCISSORS") {
-                    whoWon = "You Lose! Scissors Beats Paper!"
-                } else if (computerSelection == "PAPER") {
-                    whoWon = "It's a tie! You both chose Paper!"
-                } else {
-                    whoWon = "You Win! Paper Beats Rock!"
-                }
-
-            }
-
-            if (playerSelection == "SCISSORS") {
-
-                if (computerSelection == "ROCK") {
-                    whoWon = "You Lose! Rock Beats Scissors!"
-                } else if (computerSelection == "SCISSORS") {
-                    whoWon = "It's a tie! You both chose Scissors!"
-                } else {
-                    whoWon = "You Win! Scissors Beats Paper!"
-                }
-
-            }
-            return whoWon;
+    <section class = "firstsection">
+    <h1>Welcome to The Most Intense game of Rock Paper Scissors You Will EVER EXPERIENCE!</h1>
+    
+        <h3> Rules: </h3>
+        <ol>
+            <li>You pick one of the three options!</li>
+            <li>The computer plays against you!</li>
+            <li>The first to reach 5 points is declared the winner!</li>
+        </ol>
 
 
-        }
+    </section>
 
+    <div class="options">
+        <img class="rock" src="rock.png" alt="rock">
+        <img class="paper" src="paper.png" alt="paper">
+        <img class="scissors" src="scissors.png" alt="scissors">
 
-        //play 5 round game
-        //keep score, report winner at the end
-        function game() {
-            // while round < 5, playround
+    </div>
+    <div class="score">
+        <div class = "scoretracker">
+        <p class="playerScore"></p>
+        <p class="computerScore"></p>
+    </div>
+        <p class="whowonEach"></p>
+        <p class="finalWinner"></p>
 
-            while (round < 10 && (scoreComputer < 5 || scorePlayer < 5)) {
-                playRound(playerSelection, computerSelection)
-                console.log(playRound(playerSelection, computerSelection))
-                computerPlay()
-                playerChoice()
-                round = round + 1;
-                
-               
-                if (whoWon == "You Win! Rock Beats Scissors!" || whoWon == "You Win! Paper Beats Rock!" || whoWon ==
-                    "You Win! Scissors Beats Paper!") {
-                    scorePlayer = scorePlayer + 1;
-
-                    
-                //if player wins a round, scorePlayer ++         
-                
-                } 
-                
-                if (whoWon == "You Lose! Rock Beats Scissors!" || whoWon == "You Lose! Paper Beats Rock!" || whoWon ==
-                    "You Lose! Scissors Beats Paper!") {
-                    scoreComputer = scoreComputer + 1;
-
-                    // if computer wins a round, scoreComputer ++
-                } 
-            }
-          
-                //if scorePlayer > scoreComputer, gamewinner = "Player Won! score is (scorePlayer)"
-                if (scorePlayer == 5) {
-                        gameWinner =
-                            `Congrats, You Won! Your Score is ${scorePlayer} to the Computer's ${scoreComputer} .`
-                    } else if (scoreComputer == 5) {
-                        //if scorecomputer > scorePlayer, gamewinner = "Computer Won! score is (scoreComputer)"
-                        gameWinner =
-                            `Sorry, You Lost! The Computer's Score is ${scoreComputer} to your ${scorePlayer} .`
-                    }
-                  
-                    
-                    
-                    return gameWinner;
-                    
-                }
-            
-
-            console.log(game())
-    </script>
+    </div>
 </body>
 
 </html>
