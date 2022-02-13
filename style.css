@@ -6,7 +6,10 @@ body {
     margin: 0;
     padding: 0;
   background-color: blue;
-  background-image: url("coolWallpaper")
+  background-image: url("coolWallpaper");
+  background-size: cover;
+
+
 
 }
 img {
