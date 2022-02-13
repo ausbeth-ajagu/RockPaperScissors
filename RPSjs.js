@@ -92,7 +92,7 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection == "SCISSORS") {
             whoWon = "It's a tie! You both chose Scissors!"
         } else {
-            whoWon = "You Win! Computer chose Scissors! Scissors Beats Paper!"
+            whoWon = "You Win! Computer chose Paper! Scissors Beats Paper!"
         }
 
     }
@@ -114,7 +114,7 @@ function game() {
 
 
     if (whoWon == "You Win! Computer chose Scissors! Rock Beats Scissors!" || whoWon == "You Win! Computer chose Rock! Paper Beats Rock!" || whoWon ==
-        "You Win! Computer chose Scissors! Scissors Beats Paper!") {
+        "You Win! Computer chose Paper! Scissors Beats Paper!") {
         scorePlayer = scorePlayer + 1;
 
         //if player wins a round, scorePlayer ++         
